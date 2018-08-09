@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+        .hero {
+            background-image: url('https://picsum.photos/1440/300?random');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            position: relative;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            display: flex;
+            align-items: center;
+            /* IE has bug with valign, .. who cares */
+            min-height: 300px;
+        }
+
+        .hero::before {
+            display: block;
+            content: '';
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: midnightblue;
+            opacity: .6;
+        }
+
+        .hero-container {
+            /* adjust to used framework */
+            max-width: 1200px;
+            margin: auto;
+            position: relative;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .hero-content {
+            width: 100%;
+            color: white;
+            text-align: center;
+        }
+
+        @media (min-width: 992px) {
+            .hero-content {
+                width: 50%;
+                text-align: left;
+            }
+            .hero::before {
+                width: 60%;
+            }
+        }
+    </style>
+
+    <div class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Random heading</h1>
+                <h3>Random text text text ipsum dolor finding nemo Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate voluptatum suscipit atque quas provident inventore blanditiis? Quia velit praesentium libero maxime nulla sint, suscipit esse autem ea, aut numquam sed.</h3>
+                <button>CTA Button</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
